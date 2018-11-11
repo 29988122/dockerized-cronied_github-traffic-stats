@@ -1,0 +1,33 @@
+FROM python:2.7.15
+LABEL Maintainer = "https://medium.com/@a29988122 https://github.com/nchah/github-traffic-stats"
+
+RUN apt-get update
+WORKDIR /home
+RUN apt-get install -y nano
+
+# Cron set-up
+COPY ./crontab /etc/crontab
+RUN chmod 755 /etc/crontab
+COPY ./locale /etc/default/locale
+RUN chmod 755 /etc/default/locale
+COPY ./gts_docker_cron.sh /home
+# Cron config user-input needed issue
+RUN apt-get install -y cron --option=Dpkg::Options::=--force-confdef
+
+# gts set-up
+COPY ./requirements.txt /home
+RUN pip install github-traffic-stats
+RUN pip install -r requirements.txt
+
+# dropbox_uploader set-up
+COPY ./gts_csv_dropbox_uploader.py /home
+COPY ./config.ini /home
+RUN pip install dropbox
+RUN pip install ConfigParser
+RUN mkdir ./csv
+
+RUN chmod -R 755 /home
+
+# debug syslog set-up
+RUN apt-get -y install busybox
+CMD busybox syslogd && cron -f

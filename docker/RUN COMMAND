@@ -1,0 +1,1 @@
+docker run -td --restart always gts_docker_cron
