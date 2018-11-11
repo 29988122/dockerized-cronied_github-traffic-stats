@@ -1,5 +1,6 @@
 # dockerized-cronied_github-traffic-stats
-Based on https://github.com/nchah/github-traffic-stats , but now dockerized &amp; using cron for pulling data continuously from Github, since Github traffic data only preserved for 14 days.
+Based on https://github.com/nchah/github-traffic-stats , but now dockerized &amp; using cron for pulling data continuously from Github, and upload them to your dropbox.
+Since Github traffic data only preserved for 14 days, this is a necessary cron job.
 
 
 1. Enter your Github ID and Password in gts_docker_cron.sh
