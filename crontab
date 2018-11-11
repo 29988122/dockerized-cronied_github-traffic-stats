@@ -1,0 +1,2 @@
+00 12 * * 1 root /home/gts_docker_cron.sh >> /home/gts_docker_cron.log 2>&1
+#*/3 * * * * root /home/gts_docker_cron.sh >> /home/gts_docker_cron.log 2>&1
