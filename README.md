@@ -7,4 +7,4 @@ Since Github traffic data only preserved for 14 days, this is a necessary cron j
 1. Enter your Github ID and Password in gts_docker_cron.sh
 2. Enter your Dropbox access token in config.ini
 3. Build your docker image via /docker/dockerfile
-4. Done. Run it using /docker/RUN COMMAND on your machine.
+4. Done. Run it using /docker/RUN COMMAND on your machine
