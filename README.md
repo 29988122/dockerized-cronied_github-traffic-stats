@@ -8,3 +8,6 @@ Since Github traffic data only preserved for 14 days, this is a necessary cron j
 2. Enter your Dropbox access token in config.ini
 3. Build your docker image via /docker/dockerfile
 4. Done. Run it using /docker/RUN COMMAND on your machine
+
+Docker image can also be found here:
+https://hub.docker.com/r/a29988122/dockerized-cronied_github-traffic-stats
